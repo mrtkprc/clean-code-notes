@@ -6,9 +6,9 @@
 
 ## Bad Code
 
-I know of one company that, in the late 80s, wrote a killer app. It was very popular, and lots of professionals bought and used it. But then the release cycles began to stretch. Bugs were not repaired from one release to the next. Load times grew and crashes increased. I remember the day I shut the product down in frustration and never used it again. The company went out of business a short time after that.
+>I know of one company that, in the late 80s, wrote a killer app. It was very popular, and lots of professionals bought and used it. But then the release cycles began to stretch. Bugs were not repaired from one release to the next. Load times grew and crashes increased. I remember the day I shut the product down in frustration and never used it again. The company went out of business a short time after that.
 
-Two decades later I met one of the early employees of that company and asked him what had happened. The answer confirmed my fears. They had rushed the product to market and had made a huge mess in the code. As they added more and more features, the code got worse and worse until they simply could not manage it any longer. It was the bad code that brought the company down.
+>Two decades later I met one of the early employees of that company and asked him what had happened. The answer confirmed my fears. They had rushed the product to market and had made a huge mess in the code. As they added more and more features, the code got worse and worse until they simply could not manage it any longer. It was the bad code that brought the company down.
 
 
 ## **LeBlanc's Law (Later Equals Never)**
@@ -47,7 +47,39 @@ public static void copyChars(char a1[], char a2[])
 a1 and a2 are noninformative, they provide no clue to the author's intention.
 ```
 
+## Class Names
+
+Classes and objects should have noun or nound phrase names like ``Customer``, ``WikiPage``, ``Account`` and ``AddressParser``. A class name should not be a verb.
+
+## Method Names
+
+Methods should have verb or verb phrase names like ``postPayment``, ``deletePage`` or ``save``. 
+
+When constructors are overloaded, use static factory methods with names that describe the arguments. For example,
+
+```
+Complex fulcrumPoint = Complex.FromRealNumber(23.0);
+```
+
+**is generally better than**
+
+```
+Complex fulcrumPoint = new Complex(23.0);
+```
+
+## Pick One Word per Concept
+
+Pick one word for one abstract concept and stick with it. For instance, it's confusing to have ``fetch``, ``retrieve`` and ``get`` as equivalent of different classes. 
+
+### **Use refactoring tools whenever you see bad code. This process might be painfull in short time; however, it will be beneficial in the future.**
 
 
+## Functions
 
+## ***The first rule of functions is that they should be small!!!***
+
+> In 1999 I went to visit Kent Beck at his home in Ore-gon. We sat down and did some programming together. When Kent showed me the code, I was struck by how small all the functions were. Every function in this program was just two, or three, or four lines long. Each was transparently obvious. Each told a story. And each led you to the next in a compelling order. That's how short your functions should be!
+
+>- Functions should hardly ever be 20 lines long.
+>- Functions should not be 100 lines long.
 
