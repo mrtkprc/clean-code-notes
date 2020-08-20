@@ -83,3 +83,50 @@ Pick one word for one abstract concept and stick with it. For instance, it's con
 >- Functions should hardly ever be 20 lines long.
 >- Functions should not be 100 lines long.
 
+## *Indent of level of a function should not be greater than one or two.*
+
+## Do One Thing
+
+>- Functions should do one thing. 
+>- They should do it well. 
+>- They should do it only.
+
+### It is the key to keeping functions short and making sure they do ***one thing***.
+
+## Switch statements
+
+It's hard to make a small ``switch`` statement. It's also hard to make a ``switch`` statement that does one thing. By their nature, ``switch`` statements always do ***N*** thing. Unfortunately we can't always avoid ``switch`` statements, but we can make sure that each ``switch`` statement is burried in a low-level class and is never repeated. We do this, of course, with ***polymorphism.***
+
+```
+public Money calculatePay(Employee e) throws InvalidEmployee {
+    switch(e.type){
+        case COMMISSIONED:
+            return calculateCommissionedPay(e);
+        case HOURLY:
+            return calculateHourlyPay(e);
+        case SALARIED:
+            return calculateSalariedPay(e);
+        default:
+            throw new InvalidEmployeeType(e.type);
+    }
+}
+
+```
+## There are several problems with this function. 
+>- It's large and when employee types are added. It will grow.
+>- It very clearly does more than one thing.
+>- It violates the Single Responsibility Problem (SRP) there is more than one reason for it to change.
+>- It violates the Open Closed Principle (OCP) because it must change whenever new types are added.
+
+But possibly the worst problem with this function is that there are an unlimited number of other functions that will have same structure. For example, we could have:
+
+> ``deliveryPay(Employee e, Money pay)``
+
+## **The solution**:  Burry the switch statement in the basement of **Abstract Factory** and never let anyone see it.
+
+> General Rule: Switch statements is that they can be tolerated if they appear only once, are used to create ***polymorphic objects*** are hidden behind an inheritance relationship so that the rest of system can't see them.
+
+
+
+
+
