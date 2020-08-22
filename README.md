@@ -126,6 +126,101 @@ But possibly the worst problem with this function is that there are an unlimited
 
 > General Rule: Switch statements is that they can be tolerated if they appear only once, are used to create ***polymorphic objects*** are hidden behind an inheritance relationship so that the rest of system can't see them.
 
+## Use Descriptive Names
+
+>- Don't be afraid to make a name long. 
+>- Long description name is better than a long descriptive comments.
+
+## Function Arguments
+
+The ideal number of arguments for a function is zero. 
+
+### **Three arguments should be avoided where possible**
+
+> More than three arguments requires very special justification and **there shouldn't be used anyway**
+
+### If a function is going to transform its input argument, transformation should appear as return value.
+
+### Passing a boolean into a function is a truly terrible practice.
+
+> The parts we ignore are where bugs will hide.
+
+## Have No Side Effects
+
+```
+public class UserValidator {
+    private Cryptographer cryptographer;
+    public boolean checkPassword(String username, String password){
+        User user = UserGatewat.findByName(username);
+
+        if(user != User.NULL){
+            String codedPhrase = user.getPhraseEncodedByPassword();
+            String phrase = cryptographer.decrypt(codedPhrase, password);
+            
+            if("Valid Password").equals(phrase){
+                ***Session.initialize();***(Side Effect here)
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+=> The function name doesn't imply that it initializes the sesion.
+
+```
+
+## Output Arguments
+
+Arguments are most naturally interpreted as inputs to a function. 
+
+``appendFooter(s);``
+
+>- Does this function append s as the footer to something?
+
+or
+
+>- Does it append some footer to s?
+
+## Anything that forces you to check the function signature is equivalent to a double-take.
+
+## Command Query Seperation 
+
+``public boolean set(String attribute, String value)``
+
+```
+if(set("username","unclebob")) {
+    //...
+}
+```
+Imagine this from point of view of the reader. **What does it mean?**
+
+>- Is it asking whether the username attribute was previously set to "unclebob"?
+
+or
+
+>* Is it asking whether the "username" attribute was successfully set to "unclebob"?
+
+We could try to resolve this by renaming the set function to ``setAndCheckIfExists``, but that doesn't much help readibility of the if statement.
+***The real solution is to seperate the command from the query so that ambiguity cannot occur***
+
+```
+if(attributeExists("username")){
+    setAttribute("username","unclebob");
+}
+```
+
+### Function should either do something or answering something, ***but not both***
+
+## Prefer Exceptions to Returning Error Codes
+
+> # Duplication may be the root of all evil in software. Many principles and practices have been created the purposes of controlling or eliminating it.
+
+
+## Functions are verbs while classes are nouns.
+
+
+
 
 
 
