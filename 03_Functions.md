@@ -1,3 +1,5 @@
+### [Return to Home](README.md)
+
 # 3-) Functions
 
 ## ***The first rule of functions is that they should be small!!!***
