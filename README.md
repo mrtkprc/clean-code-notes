@@ -1,4 +1,8 @@
-# clean-code-notes
+# Clean Code
+
+> ## Programming is a craft more than it is a science.
+
+> ## Never let the rot get started
 
 ![](./images/wtf.png "Clean Code Cover")
 
@@ -29,3 +33,7 @@
 # [12-) Emergence](12_Emergence.md)
 
 # [13-) Concurrency](13_Concurrency.md)
+
+# [[14-16]-) Refactoring workshops](#)
+
+# [17-) Smells and Heuristics](17_SmellsAndHeuristics.md)
