@@ -1,6 +1,6 @@
 # Clean Code
 
-## I think that every software developer should read clean code and maybe it's a book that can be taught even in universities. Therefore, I wanted to take notes from clean code, while reading the book. You can find the notes following chapters.
+## I think that every software developer should read clean code and maybe it's a book that can be taught even in universities. Therefore, I wanted to take notes from clean code, while reading the book. You can find the notes following chapters. ***(Mert Köprücü)***
 
 ## ***I hope it will be beneficial for you.***
 
