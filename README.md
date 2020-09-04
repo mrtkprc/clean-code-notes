@@ -1,9 +1,18 @@
 # Clean Code
 
+## I think that every software developer should read clean code and maybe it's a book that can be taught even in universities. Therefore, I wanted to take notes from clean code, while reading the book. You can find the notes following chapters.
+
+## ***I hope it will be beneficial for you.***
+
+#
+
 > ## Programming is a craft more than it is a science.
 
-> ## Never let the rot get started
+#
 
+> ## ***Never let the rot get started***
+
+#
 ![](./images/wtf.png "Clean Code Cover")
 
 # Chapters
@@ -34,6 +43,6 @@
 
 # [13-) Concurrency](13_Concurrency.md)
 
-# [[14-16]-) Refactoring workshops](#)
+# [[14-16]-) Refactoring workshops(Empty)](#)
 
 # [17-) Smells and Heuristics](17_SmellsAndHeuristics.md)
